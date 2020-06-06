@@ -1,7 +1,7 @@
 // create server, get express from the library
 const express = require('express')
 // make access to article.js
-const articleRouter = require('./routes/article')
+const articleRouter = require('./routes/articles')
 // calling from express and as function
 const app = express()
 
@@ -24,7 +24,7 @@ app.get('/', (req,res) => {
         description: 'test description'
     }]
     // res.send('Hello World') this is addting texts everytime instead
-    res.render('index', { articles: articles }) // pass it the path to the view we want
+    res.render('articles/index', { articles: articles }) // pass it the path to the view we want
 })
 
 // pass in a port to start app

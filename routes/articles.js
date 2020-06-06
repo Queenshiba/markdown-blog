@@ -3,8 +3,8 @@ const express = require('express')
 const router = express.Router()
 
 //
-router.get('/', (req, res) => {
-    res.send('In articles')
+router.get('/new', (req, res) => {
+    res.render('articles/new')
 })
 
 // need to tell app to use this router
