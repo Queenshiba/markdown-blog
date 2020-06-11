@@ -19,16 +19,16 @@ app.use(express.urlencoded({ extended: false }))
 
 
 // create a route, send to the user
-app.get('/', (req,res) => {
+app.get('/', async (req,res) => {
     // res.send('test')
     const articles = [{
         title: 'Test Aritcle',
-        createdAt: Date.now(),
+        createdAt: new Date(),
         description: 'test description'
     },
     {
         title: 'Test Aritcle 2',
-        createdAt: Date.now(),
+        createdAt: new Date(),
         description: 'test description'
     }]
     // res.send('Hello World') this is addting texts everytime instead

@@ -14,7 +14,7 @@ router.get('/new', (req, res) => {
 router.get('/:id', async (req, res) => {
     const article = await Article.findById(req.params.id)
     if(article == null) res.redirect('/')
-    res.render('article/show', { article: article})
+    res.render('articles/show', { article: article})
 })
 
 router.post('/', async (req, res) => {
@@ -27,7 +27,8 @@ try {
     article = await article.save()
     res.redirect(`/articles/${article.id}`)
 } catch(e) {
-    res.render('articles/new', { article:article })
+    console.log(e)
+    res.render('articles/new', { article: article })
 }
 
 })
